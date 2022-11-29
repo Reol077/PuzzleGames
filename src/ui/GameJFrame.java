@@ -1,14 +1,18 @@
 package ui;
 
 import javax.swing.*;
+import java.util.Random;
 
 public class GameJFrame extends JFrame {
-    //游戏主界面
 
+    int[][] data = new int[4][4];
     public GameJFrame() {
         initJFrame();
         //初始化菜单
         initJMenuBar();
+
+        //初始化数据
+        initData();
 
         //初始化图片
         initImage();
@@ -17,15 +21,29 @@ public class GameJFrame extends JFrame {
 
     }
 
+    private void initData() {
+        int[] tempArr = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
+        Random r = new Random();
+        for (int i = 0; i < tempArr.length; i++) {
+            int index = r.nextInt(tempArr.length);
+            int temp = tempArr[i];
+            tempArr[i] = tempArr[index];
+            tempArr[index] = temp;
+        }
+
+        for (int i = 0; i < tempArr.length; i++) {
+            data[i / 4][i % 4] = tempArr[i];
+        }
+    }
+
     private void initImage() {
-        int number=1;
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                JLabel jLabel=new JLabel(new ImageIcon("F:\\java\\PuzzleGames\\image\\girl\\girl1\\"+number+".jpg"));
-                jLabel.setBounds(105*j,105*i,105,105);
+                int number=data[i][j];
+                JLabel jLabel = new JLabel(new ImageIcon("F:\\java\\PuzzleGames\\image\\girl\\girl1\\" + number + ".jpg"));
+                jLabel.setBounds(105 * j, 105 * i, 105, 105);
                 //this.add(jLabel);
                 this.getContentPane().add(jLabel);
-                number++;
             }
         }
 
