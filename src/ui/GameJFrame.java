@@ -10,7 +10,7 @@ public class GameJFrame extends JFrame {
         this.setTitle("拼图单机版 v1.0");
         this.setAlwaysOnTop(true);
         this.setLocationRelativeTo(null);
-        this.setDefaultCloseOperation(3);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.setVisible(true);
     }
 
