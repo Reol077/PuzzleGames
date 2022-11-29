@@ -7,15 +7,32 @@ public class GameJFrame extends JFrame {
 
     public GameJFrame() {
         initJFrame();
-
+        //初始化菜单
         initJMenuBar();
+
+        //初始化图片
+        initImage();
         //显示窗口
         this.setVisible(true);
 
     }
 
+    private void initImage() {
+        int number=1;
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                JLabel jLabel=new JLabel(new ImageIcon("F:\\java\\PuzzleGames\\image\\girl\\girl1\\"+number+".jpg"));
+                jLabel.setBounds(105*j,105*i,105,105);
+                //this.add(jLabel);
+                this.getContentPane().add(jLabel);
+                number++;
+            }
+        }
+
+
+    }
+
     private void initJMenuBar() {
-        //初始化菜单
         JMenuBar jMenuBar = new JMenuBar();
 
         JMenu functionJMenu = new JMenu("功能");
@@ -51,6 +68,8 @@ public class GameJFrame extends JFrame {
         this.setLocationRelativeTo(null);
         //关闭模式
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        //取消默认的居中放置
+        this.setLayout(null);
     }
 
 }
