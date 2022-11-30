@@ -69,7 +69,7 @@ public class LoginJFrame extends JFrame implements MouseListener {
         this.getContentPane().add(login);
 
         register.setBounds(256, 310, 128, 47);
-        register.setIcon(new ImageIcon("image\\login\\注册按钮.png"));
+        register.setIcon(new ImageIcon("image\\login\\注册按钮.pn"));
         register.setBorderPainted(false);
         register.setContentAreaFilled(false);
         register.addMouseListener(this);
