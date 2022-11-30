@@ -5,10 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="615bd059-7aa0-4df4-bcdc-0b853e2d77e3" name="变更" comment="完成游戏功能">
-      <change afterPath="$PROJECT_DIR$/src/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/CodeUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ui/LoginJFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ui/LoginJFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -237,7 +233,35 @@
       <option name="project" value="LOCAL" />
       <updated>1669789709504</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="完成游戏功能">
+      <created>1669792601565</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1669792601565</updated>
+    </task>
+    <task id="LOCAL-00024" summary="完成游戏功能">
+      <created>1669792641353</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669792641353</updated>
+    </task>
+    <task id="LOCAL-00025" summary="完成游戏功能">
+      <created>1669792680600</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1669792680600</updated>
+    </task>
+    <task id="LOCAL-00026" summary="完成游戏功能">
+      <created>1669792719573</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1669792719573</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +281,7 @@
     <MESSAGE value="打乱图片" />
     <MESSAGE value="添加图片" />
     <MESSAGE value="Merge remote-tracking branch 'origin/main'" />
+    <MESSAGE value="完成登录功能" />
     <MESSAGE value="完成游戏功能" />
     <option name="LAST_COMMIT_MESSAGE" value="完成游戏功能" />
   </component>
