@@ -113,7 +113,8 @@ public class LoginJFrame extends JFrame implements MouseListener {
                 showJDialog("用户名或密码错误");
             }
         } else if (e.getSource() == register) {
-            System.out.println("点击了注册按钮");
+            this.setVisible(false);
+            new RegisterJFrame();
         } else if (e.getSource() == rightCode) {
             System.out.println("更换验证码");
             String code = CodeUtil.getCode();
