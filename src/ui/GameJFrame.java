@@ -1,11 +1,17 @@
 package ui;
 
 import javax.swing.*;
+import javax.swing.border.BevelBorder;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.Random;
 
-public class GameJFrame extends JFrame {
+public class GameJFrame extends JFrame implements KeyListener {
 
-    int[][] data = new int[4][4];
+    private int[][] data = new int[4][4];
+    private int x;
+    private int y;
+
     public GameJFrame() {
         initJFrame();
         //初始化菜单
@@ -32,22 +38,29 @@ public class GameJFrame extends JFrame {
         }
 
         for (int i = 0; i < tempArr.length; i++) {
+            if (tempArr[i] == 0) {
+                x = i / 4;
+                y = i % 4;
+            }
             data[i / 4][i % 4] = tempArr[i];
         }
     }
 
     private void initImage() {
+        this.getContentPane().removeAll();
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                int number=data[i][j];
-                JLabel jLabel = new JLabel(new ImageIcon("F:\\java\\PuzzleGames\\image\\girl\\girl1\\" + number + ".jpg"));
-                jLabel.setBounds(105 * j, 105 * i, 105, 105);
-                //this.add(jLabel);
+                int number = data[i][j];
+                JLabel jLabel = new JLabel(new ImageIcon("image\\animal\\animal1\\" + number + ".jpg"));
+                jLabel.setBounds(105 * j + 83, 105 * i + 134, 105, 105);
+                jLabel.setBorder(new BevelBorder(BevelBorder.LOWERED));
                 this.getContentPane().add(jLabel);
             }
         }
-
-
+        JLabel background = new JLabel(new ImageIcon("image\\background.png"));
+        background.setBounds(40, 40, 508, 560);
+        this.getContentPane().add(background);
+        this.getContentPane().repaint();
     }
 
     private void initJMenuBar() {
@@ -88,6 +101,54 @@ public class GameJFrame extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         //取消默认的居中放置
         this.setLayout(null);
+        this.addKeyListener(this);
     }
 
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        int code = e.getKeyCode();
+        if(code==37){
+            if(y==3){
+                return;
+            }
+            data[x][y]=data[x][y+1];
+            data[x][y+1]=0;
+            y++;
+            initImage();
+        }else if (code==38){
+            if(x==3){
+                return;
+            }
+            data[x][y]=data[x+1][y];
+            data[x+1][y]=0;
+            x++;
+            initImage();
+        }else if (code==39){
+            if(y==0){
+                return;
+            }
+            data[x][y]=data[x][y-1];
+            data[x][y-1]=0;
+            y--;
+            initImage();
+        } else if (code==40) {
+            if(x==0){
+                return;
+            }
+            data[x][y]=data[x-1][y];
+            data[x-1][y]=0;
+            x--;
+            initImage();
+        }
+    }
 }
